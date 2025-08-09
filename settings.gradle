@@ -1,0 +1,11 @@
+rootProject.name = "ecom"
+
+include("customer-service",
+        "order-service",
+        "catalog-service",
+        "payment-service",
+        "audit-service",
+        "feed-engine",
+        "common",
+        "service-registry",
+        "gateway")

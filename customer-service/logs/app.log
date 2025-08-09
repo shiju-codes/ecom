@@ -1,0 +1,24 @@
+2025-08-09 13:07:29 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-09 13:07:29 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4ae7c1d4
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@65cf531b
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-09 13:07:29 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/customer/create", parameters={}
+2025-08-09 13:07:29 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.shiju.customer_service.controller.CustomerControllerV1#createCustomer(CustomerCreationRequest)
+2025-08-09 13:07:29 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [CustomerCreationRequest[firstName=John, lastName=Doe, email=john.doe@example.com, phoneNumber=+12345 (truncated)...]
+2025-08-09 13:07:29 INFO  c.s.c.c.CustomerControllerV1 - 2EA7BA6A-349E-4215-9ED6-64D854987FF0 - Request received for customer creation : CustomerCreationRequest[firstName=John, lastName=Doe, email=john.doe@example.com, phoneNumber=+1234567890, password=yourPassword123, baseRequest=null]
+2025-08-09 13:07:29 INFO  c.s.c.facade.CustomerFacadeImpl - 2EA7BA6A-349E-4215-9ED6-64D854987FF0 - Customer response : CustomerResponse[firstName=Shiju, lastName=S, email=shijusofficial@gmail.com, phoneNumber=9048708427]
+2025-08-09 13:07:29 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-08-09 13:07:29 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [CustomerResponse[firstName=Shiju, lastName=S, email=shijusofficial@gmail.com, phoneNumber=9048708427 (truncated)...]
+2025-08-09 13:07:29 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-09 14:32:24 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-08-09 14:32:24 INFO  c.s.c.CustomerServiceApplication - Starting CustomerServiceApplication using Java 21.0.7 with PID 16968 (D:\microservices\ecom\customer-service\build\classes\java\main started by Shiju S in D:\microservices\ecom\customer-service)
+2025-08-09 14:32:24 INFO  c.s.c.CustomerServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 14:32:24 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-09 14:32:24 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-09 14:32:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-09 14:32:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.

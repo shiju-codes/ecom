@@ -1,0 +1,23 @@
+server:
+  port: 8080
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    renewalIntervalInSecs: 5
+    leaseExpirationDurationInSecs: 10
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8087/eureka}
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: customer-service
+              predicates:
+                - Path=/api/customer/**
+              filters:
+                - name: RequestLogging
+              uri: lb://customer-service
