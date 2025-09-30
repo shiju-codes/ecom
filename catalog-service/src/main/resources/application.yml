@@ -1,14 +1,41 @@
 server:
   port: 8082
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    renewalIntervalInSecs: 5
+    leaseExpirationDurationInSecs: 10
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8087/eureka}
+  instance:
+    preferIpAddress: true
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+  endpoint:
+    health:
+      show-details: always
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+zipkin:
+  tracing:
+    endpoint: http://localhost:9411
 spring:
   application:
     name: product-service
   datasource:
-    url: jdbc:mysql://localhost:3306/ecom?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/ecom?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update   # options: none, update, create, create-drop
