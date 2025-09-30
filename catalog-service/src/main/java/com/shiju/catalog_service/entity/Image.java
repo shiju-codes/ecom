@@ -2,6 +2,9 @@ package com.shiju.catalog_service.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 import java.util.Date;
 
@@ -19,6 +22,7 @@ public class Image {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String url;
@@ -26,17 +30,13 @@ public class Image {
     @Version
     private Long version;
 
+    @CreationTimestamp
+    @Column(updatable = false)
     private Date created;
 
+    @UpdateTimestamp
     private Date updated;
 
-    @PrePersist
-    protected void onCreate() {
-        created = new Date();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updated = new Date();
-    }
+    @CreatedBy
+    private String createdBy;
 }

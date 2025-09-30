@@ -3,6 +3,10 @@ package com.shiju.catalog_service.entity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,6 +20,9 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
     private Long sku;
 
     private String name;
@@ -26,29 +33,24 @@ public class Product {
 
     private float rating;
 
-    @OneToOne(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Brand brand;
+    private String brand;
 
     private String productUrl;
 
-    @OneToMany(mappedBy = "ecom_image", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Image> images;
 
     @Version
     private Long version;
 
+    @CreationTimestamp
+    @Column(updatable = false)
     private Date created;
 
+    @UpdateTimestamp
     private Date updated;
 
-    @PrePersist
-    protected void onCreate() {
-        created = new Date();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updated = new Date();
-    }
+    @CreatedBy
+    private String createdBy;
 
 }

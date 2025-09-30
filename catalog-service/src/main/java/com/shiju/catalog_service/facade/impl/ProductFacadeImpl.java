@@ -1,9 +1,11 @@
-package com.shiju.catalog_service.facade;
+package com.shiju.catalog_service.facade.impl;
 
+import com.shiju.catalog_service.facade.ProductFacade;
 import com.shiju.catalog_service.model.ProductRequest;
 import com.shiju.catalog_service.service.ProductService;
-import com.shiju.catalog_service.service.ProductServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

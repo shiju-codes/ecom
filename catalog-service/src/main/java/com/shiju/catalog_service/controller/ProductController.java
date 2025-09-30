@@ -3,6 +3,8 @@ package com.shiju.catalog_service.controller;
 import com.shiju.catalog_service.facade.ProductFacade;
 import com.shiju.catalog_service.model.ProductRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,10 +17,11 @@ import java.util.List;
 /**
  * Product controller to product manipulations
  */
-@Slf4j
 @RestController
-@RequestMapping("/product")
+@RequestMapping("api/product")
 public class ProductController {
+
+    private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 
     private final ProductFacade productFacade;
 
